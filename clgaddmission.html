@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NRI Engineering College</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+        }
+
+        header {
+            background-color: #174ea6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #222;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .banner {
+            background-color: #dbe8ff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .banner h1 {
+            color: #174ea6;
+        }
+
+        .section {
+            padding: 25px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #174ea6;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px gray;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #174ea6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .admission {
+            background-color: #e3f2fd;
+            padding: 25px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>NRI Engineering College</h1>
+        <p>Knowledge | Innovation | Excellence</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#departments">Departments</a>
+        <a href="#courses">Courses</a>
+        <a href="#admission">Admissions</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+        <h1>Welcome to NRI Engineering College</h1>
+        <p>Build Your Future With Quality Education</p>
+        <button>Apply Now</button>
+    </section>
+
+    <!-- About College -->
+    <section class="section">
+        <h2>About Our College</h2>
+        <p>
+            NRI Engineering College is a leading institution
+            providing quality education and developing skilled students.
+        </p>
+    </section>
+
+    <!-- Departments -->
+    <section class="section" id="departments">
+        <h2>Our Departments</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Computer Science</h3>
+                <p>Learn programming, software development and AI.</p>
+            </div>
+
+            <div class="card">
+                <h3>Artificial Intelligence</h3>
+                <p>Learn AI, Machine Learning and Data Science.</p>
+            </div>
+
+            <div class="card">
+                <h3>Electronics</h3>
+                <p>Learn electronics and communication technologies.</p>
+            </div>
+
+            <div class="card">
+                <h3>Mechanical</h3>
+                <p>Learn machines, manufacturing and design.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section" id="courses">
+        <h2>Courses Offered</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>B.Tech</h3>
+                <p>Duration: 4 Years</p>
+                <p>Engineering undergraduate program.</p>
+            </div>
+
+            <div class="card">
+                <h3>M.Tech</h3>
+                <p>Duration: 2 Years</p>
+                <p>Postgraduate engineering program.</p>
+            </div>
+
+            <div class="card">
+                <h3>MBA</h3>
+                <p>Duration: 2 Years</p>
+                <p>Management and business studies.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Faculty -->
+    <section class="section">
+        <h2>Our Faculty</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Dr. Aruna</h3>
+                <p>Professor - WebDevelopment</p>
+            </div>
+
+            <div class="card">
+                <h3>Dr. Anusha</h3>
+                <p>Professor - Python</p>
+            </div>
+
+            <div class="card">
+                <h3>Mr. Arun Kumar</h3>
+                <p>Assistant Professor - Electronics</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Admissions -->
+    <section class="admission" id="admission">
+        <h2>Admission Procedure</h2>
+
+        <ol>
+            <li>Fill the online application form.</li>
+            <li>Submit the required documents.</li>
+            <li>Attend the counselling process.</li>
+            <li>Pay the admission fee.</li>
+            <li>Complete the admission process.</li>
+        </ol>
+
+        <button>Apply for Admission</button>
+    </section>
+
+    <!-- Facilities -->
+    <section class="section" id="facilities">
+        <h2>Campus Facilities</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>📚 Library</h3>
+                <p>Large collection of books and study materials.</p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Computer Labs</h3>
+                <p>Modern computer laboratories for students.</p>
+            </div>
+
+            <div class="card">
+                <h3>🏏 Sports</h3>
+                <p>Facilities for indoor and outdoor games.</p>
+            </div>
+
+            <div class="card">
+                <h3>🏠 Hostel</h3>
+                <p>Safe and comfortable hostel facilities.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section">
+        <h2>Upcoming Events</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Tech Fest</h3>
+                <p>15 November 2026</p>
+                <p>Technical competitions and exhibitions.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sports Day</h3>
+                <p>25 November 2026</p>
+                <p>Various sports competitions.</p>
+            </div>
+
+            <div class="card">
+                <h3>College Fest</h3>
+                <p>10 December 2026</p>
+                <p>Cultural and entertainment programs.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+
+        <p>📍 NRI Engineering College, Vijayawada</p>
+        <p>📞 Phone: 9876543210</p>
+        <p>📧 Email: info@abccollege.com</p>
+
+        <p>© 2026 NRI Engineering College</p>
+    </footer>
+
+</body>
+</html>
