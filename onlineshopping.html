@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusCart - Online Shopping</title>
+
+    <style>
+
+        /* ---------- BASIC STYLING ---------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            background-color: #4a148c;
+            color: white;
+            padding: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        /* ---------- NAVIGATION ---------- */
+
+        nav {
+            background-color: #311b92;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffca28;
+        }
+
+        /* ---------- PROMOTIONAL BANNER ---------- */
+
+        .banner {
+            background: linear-gradient(135deg, #ff6f00, #ffca28);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .banner h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 20px;
+        }
+
+        .shop-now {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: white;
+            color: #e65100;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .shop-now:hover {
+            background-color: #4a148c;
+            color: white;
+        }
+
+        /* ---------- MAIN CONTAINER ---------- */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ---------- CATEGORY ---------- */
+
+        .categories {
+            text-align: center;
+            padding: 35px 0;
+        }
+
+        .categories h2 {
+            color: #4a148c;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            display: inline-block;
+            background-color: white;
+            border: 2px solid #ddd;
+            padding: 12px 25px;
+            margin: 8px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            background-color: #4a148c;
+            color: white;
+        }
+
+        /* ---------- PRODUCT GRID ---------- */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            padding-bottom: 50px;
+        }
+
+        /* ---------- PRODUCT CARD ---------- */
+
+        .product-card {
+            background-color: white;
+
+            /* CSS BOX MODEL */
+            padding: 18px;
+            margin: 5px;
+
+            border: 2px solid #ddd;
+            border-radius: 12px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: #7b1fa2;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin-top: 12px;
+            color: #4a148c;
+        }
+
+        .description {
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .discount {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+
+        .rating {
+            color: #f9a825;
+            margin: 5px 0;
+        }
+
+        /* ---------- BUTTON ---------- */
+
+        .cart-btn {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 7px;
+            background-color: #4a148c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background-color: #e65100;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background-color: #21152d;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+
+        @media (max-width: 600px) {
+
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .banner h2 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>🛒 CampusCart</h1>
+
+            <p>Smart Shopping for Students</p>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <!-- PROMOTIONAL BANNER -->
+
+        <section class="banner" id="home">
+
+            <h2>Big Student Sale 🎉</h2>
+
+            <p>
+                Get up to 50% OFF on selected products!
+            </p>
+
+            <a href="#products" class="shop-now">
+                Shop Now
+            </a>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="categories" id="categories">
+
+            <div class="container">
+
+                <h2>Shop by Category</h2>
+
+                <span class="category">Laptops</span>
+                <span class="category">Mobiles</span>
+                <span class="category">Headphones</span>
+                <span class="category">Accessories</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section id="products">
+
+            <div class="container">
+
+                <h2 style="text-align:center; color:#4a148c; margin-bottom:25px;">
+                    Featured Products
+                </h2>
+
+                <div class="products">
+
+
+                    <!-- PRODUCT 1 -->
+
+                    <article class="product-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+                            alt="Laptop">
+
+                        <h3>Student Laptop</h3>
+
+                        <p class="description">
+                            Powerful laptop suitable for coding,
+                            projects and online classes.
+                        </p>
+
+                        <span class="discount">
+                            20% OFF
+                        </span>
+
+                        <p class="rating">
+                            ★★★★★
+                        </p>
+
+                        <p class="price">
+                            ₹49,999
+                            <span class="old-price">
+                                ₹62,999
+                            </span>
+                        </p>
+
+                        <button class="cart-btn">
+                            Add to Cart
+                        </button>
+
+                    </article>
+
+
+                    <!-- PRODUCT 2 -->
+
+                    <article class="product-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+                            alt="Smartphone">
+
+                        <h3>Smartphone</h3>
+
+                        <p class="description">
+                            Modern smartphone with excellent
+                            camera and battery life.
+                        </p>
+
+                        <span class="discount">
+                            15% OFF
+                        </span>
+
+                        <p class="rating">
+                            ★★★★☆
+                        </p>
+
+                        <p class="price">
+                            ₹19,999
+                            <span class="old-price">
+                                ₹23,999
+                            </span>
+                        </p>
+
+                        <button class="cart-btn">
+                            Add to Cart
+                        </button>
+
+                    </article>
+
+
+                    <!-- PRODUCT 3 -->
+
+                    <article class="product-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+                            alt="Headphones">
+
+                        <h3>Wireless Headphones</h3>
+
+                        <p class="description">
+                            Comfortable wireless headphones
+                            with high-quality sound.
+                        </p>
+
+                        <span class="discount">
+                            30% OFF
+                        </span>
+
+                        <p class="rating">
+                            ★★★★★
+                        </p>
+
+                        <p class="price">
+                            ₹2,499
+                            <span class="old-price">
+                                ₹3,499
+                            </span>
+                        </p>
+
+                        <button class="cart-btn">
+                            Add to Cart
+                        </button>
+
+                    </article>
+
+
+                    <!-- PRODUCT 4 -->
+
+                    <article class="product-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+                            alt="Smart Watch">
+
+                        <h3>Smart Watch</h3>
+
+                        <p class="description">
+                            Stylish smartwatch with fitness
+                            and notification features.
+                        </p>
+
+                        <span class="discount">
+                            25% OFF
+                        </span>
+
+                        <p class="rating">
+                            ★★★★☆
+                        </p>
+
+                        <p class="price">
+                            ₹3,999
+                            <span class="old-price">
+                                ₹5,499
+                            </span>
+                        </p>
+
+                        <button class="cart-btn">
+                            Add to Cart
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <h3>CampusCart</h3>
+
+        <p>
+            Your student-friendly online shopping website.
+        </p>
+
+        <p>
+            © 2026 CampusCart | Web Development Project
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
